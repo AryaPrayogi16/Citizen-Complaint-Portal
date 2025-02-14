@@ -1,0 +1,4 @@
+# Laravel
+src/citizen-complaint-portal/vendor
+# Environment files
+src/citizen-complaint-portal/.env

@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: . 
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src/citizen-complaint-portal:/var/www/html
+    working_dir: /var/www/html
+    container_name: citizen_complaint_app
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=citizen_complaint_portal
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+    depends_on:
+      - db
+    networks:
+      - citizen_complaint_portal_network
+
+  db:
+    image: mysql:8.0
+    container_name: citizen_complaint_portal_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: citizen_complaint_portal
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - citizen_complaint_portal_network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src/citizen-complaint-portal:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    container_name: citizen_complaint_nginx
+    depends_on:
+      - app
+    networks:
+      - citizen_complaint_portal_network
+
+networks:
+  citizen_complaint_portal_network:
+    driver: bridge
+
+volumes:
+  mysql_data:

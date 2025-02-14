@@ -1,0 +1,3 @@
+vendor
+# Environment files
+.env
