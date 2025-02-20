@@ -1,0 +1,4 @@
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' citizen_complaint_portal_db
+mysql -u root -proot
+docker exec -it citizen_complaint_portal bash
+docker volume prune -f
