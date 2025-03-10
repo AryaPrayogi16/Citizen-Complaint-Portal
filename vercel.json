@@ -29,7 +29,6 @@
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
-        "APP_KEY": "@laravel-app-key",
         "DB_CONNECTION": "pgsql",
         "DB_HOST": "aws-0-us-west-1.pooler.supabase.com",
         "DB_PORT": "5432",
