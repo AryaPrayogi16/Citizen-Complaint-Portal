@@ -1,0 +1,28 @@
+# Laravel dependencies that should not be uploaded
+src/citizen-complaint-portal/vendor
+src/citizen-complaint-portal/node_modules
+
+# Environment files
+src/citizen-complaint-portal/.env
+src/citizen-complaint-portal/.env.example
+
+# Cache and storage
+src/citizen-complaint-portal/storage
+src/citizen-complaint-portal/bootstrap/cache
+
+# Logs and debug files
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# System files
+.git
+.idea
+.vscode
+
+# Docker-related files
+docker
+docker-compose.yml
+Dockerfile
+Dockerfile.*
