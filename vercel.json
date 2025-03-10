@@ -8,7 +8,7 @@
     "routes": [
         {
             "src": "/img/(.*)",
-            "dest": "src/citizen-complaint-portal/public/img/$1"
+            "dest": "src/citizen-complaint-portal/public/img/"
         },
         {
             "src": "/(.*)",
@@ -27,14 +27,7 @@
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie",
-        "APP_KEY": "@laravel-app-key",
-        "DB_CONNECTION": "pgsql",
-        "DB_HOST": "aws-0-us-west-1.pooler.supabase.com",
-        "DB_PORT": "5432",
-        "DB_DATABASE": "postgres",
-        "DB_USERNAME": "postgres.ruwpcjcnusarphjnpnpp",
-        "DB_PASSWORD": "@Uinsa160102"
+        "SESSION_DRIVER": "cookie"
     },
     "outputDirectory": "src/citizen-complaint-portal/public"
 }
