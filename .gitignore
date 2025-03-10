@@ -1,5 +1,6 @@
 # Laravel
 src/citizen-complaint-portal/vendor
+src/citizen-complaint-portal/node_modules
 # Environment files
 src/citizen-complaint-portal/.env
 src/citizen-complaint-portal/storage
