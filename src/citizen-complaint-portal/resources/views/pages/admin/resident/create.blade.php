@@ -3,7 +3,7 @@
 @section('content')
 
 
-<a href="list.html" class="btn btn-danger mb-3">Kembali</a>
+<a href="{{ route('admin.resident.index') }}" class="btn btn-danger mb-3">Kembali</a>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">

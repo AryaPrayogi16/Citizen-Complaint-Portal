@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 {{-- menambahkan layout admin.blade.php --}}
 @section('title', 'Detail Masyarakat')
@@ -31,7 +32,7 @@
                 <td>
                     <img src="{{ asset('storage/' . $resident->avatar) }}" alt="avatar" width="200">
                 </td>
-
+            </tr>
         </table>
     </div>
 </div>  

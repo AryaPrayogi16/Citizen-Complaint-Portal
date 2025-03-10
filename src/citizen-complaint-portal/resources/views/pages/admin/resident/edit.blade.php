@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $resident->user->email) }}" readonly>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $resident->user->email) }}" >
                 @error('email')
                 <div class="invalid-feedback">{{ $message }}
                 </div>

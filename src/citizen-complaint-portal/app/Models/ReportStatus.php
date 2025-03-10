@@ -15,7 +15,7 @@ class ReportStatus extends Model
         'description'
     ];
 
-    public function reports()
+    public function report()
     {
         return $this->belongsTo(Report::class);
     }

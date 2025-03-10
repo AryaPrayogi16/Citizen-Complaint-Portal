@@ -8,6 +8,7 @@ use Illuminate\Contracts\Cache\Store;
 use App\Http\Requests\StoreResidentRequest;
 use App\Http\Requests\UpdateResidentRequest;
 use App\Interface\ResidentRepositoryInterface;
+use RealRashid\SweetAlert\Facades\Alert as Swal;
 
 class ResidentController extends Controller
 {
@@ -41,10 +42,13 @@ class ResidentController extends Controller
     {
         $data = $request->validated();
         // untuk menyimpan file avatar
-        $data['avatar'] = $data->file('avatar')->store('assets/avatar', 'public');
+        $data['avatar'] = $request->file('avatar')->store('assets/avatar', 'public');
         // menyimpan data resident
         $this->residentRepository->createResident($data);
-        return redirect()->route('admin.residents.index');
+
+        Swal::toast('Data Masyarakat Berhasil Ditambahkan', 'success')->timerProgressBar();
+
+        return redirect()->route('admin.resident.index');
 
     }
 
@@ -76,6 +80,8 @@ class ResidentController extends Controller
                 $data['avatar'] = $request->file('avatar')->store('assets/avatar', 'public');
             }
             $this->residentRepository->updateResident($data, $id);
+
+            Swal::toast('Data Masyarakat Berhasil Diubah', 'success')->timerProgressBar();
             return redirect()->route('admin.resident.index');
     }
 
@@ -85,6 +91,10 @@ class ResidentController extends Controller
     public function destroy(string $id)
     {
         $this->residentRepository->deleteResident($id);
+
+        Swal::toast('Data Masyarakat Berhasil Dihapus', 'success')->timerProgressBar();
+
         return redirect()->route('admin.resident.index'); 
+
     }
 }

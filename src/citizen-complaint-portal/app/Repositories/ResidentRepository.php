@@ -31,7 +31,8 @@ class ResidentRepository implements ResidentRepositoryInterface
         //menggunakan fungsi create untuk membuat data user baru
         
         //menggunakan fungsi create untuk membuat data resident baru
-        return $user->resident()->create($data)   ;
+        $user->assignRole('resident');
+        return $user->resident()->create($data);
 
         
     }

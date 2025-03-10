@@ -12,11 +12,14 @@ class AdminSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-        User::create([
-            'name' => 'Admin Citizen Complaint Portal',
-            'email' => 'aryaprayogi@admin.com',
-            'password' => bcrypt('admin123')
-        ])->assignRole('admin');
-    }
+{
+    echo "Seeder Berjalan!";
+    
+    User::create([
+        'name' => 'Admin Citizen Complaint Portal',
+        'email' => 'aryaprayogi@admin.com',
+        'password' => bcrypt('admin123')
+    ])->assignRole('admin');
+}
+
 }
