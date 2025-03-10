@@ -7,12 +7,12 @@
     },
     "routes": [
         {
-            "src": "/img/(.*)",
-            "dest": "src/citizen-complaint-portal/public/img/$1"
+            "src": "src/citizen-complaint-portal/public/index.php",
+            "use": "@vercel/php"
         },
         {
-            "src": "/(.*)",
-            "dest": "src/citizen-complaint-portal/api/index.php"
+           "src": "/(.*)",
+            "dest": "src/citizen-complaint-portal/public/index.php"
         }
     ],
     "env": {
