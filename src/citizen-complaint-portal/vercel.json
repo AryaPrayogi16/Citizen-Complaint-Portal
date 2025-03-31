@@ -7,7 +7,7 @@
       }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/" }
+      { "src": "/(.*)", "dest": "/" } 
     ],
     "env": {
       "APP_ENV": "production",

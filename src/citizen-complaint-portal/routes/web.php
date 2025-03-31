@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/report-success', [UserReportController::class, 'success'])->name('report.success');
 
 
-    Route::get('/my-report', [UserReportController::class, 'myReport'])->name('report.my-report');
+    Route::get('/my-report', [UserReportController::class, 'myReport'])->name('report.myreport');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 });
 
@@ -43,7 +43,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->midd
 //middleware('auth') artinya route ini hanya bisa diakses oleh user yang sudah login
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'index'])->name('register.store');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::prefix('admin')->name('admin.')->middleware('auth', 'role:admin')->group(function () {
     //cara kerja route group adalah dengan menambahkan prefix pada url
